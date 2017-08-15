@@ -7,7 +7,8 @@ fs = require('fs'),
     pb = require('pretty-bytes'),
     async = require('async'),
     _ = require('underscore'),
-    ora = require('ora');
+    ora = require('ora'),
+reportLimit = 5;
 
 if (process.argv[2] == '-q')
     var quietMode = true;
@@ -61,7 +62,7 @@ fsChild.on('exit', function(code) {
     }, function(errs, totals) {
         if (errs) throw errs;
         totals = _.sortBy(totals, 'snapUsage');
-        var report = totals.slice(totals.length - 6, totals.length - 1).reverse();
+        var report = totals.slice(totals.length - reportLimit+1, totals.length - 1).reverse();
         var leaf = {};
         _.each(report, function(r) {
             leaf[r.fs] = pb(r.snapUsage);
