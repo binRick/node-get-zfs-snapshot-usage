@@ -70,7 +70,7 @@ fsChild.on('exit', function(code) {
         var treeReport = tree({
             label: 'Snapshot Usage Report',
             nodes: [{
-                label: 'Top Filesystems by Usage',
+                label: 'Top Filesystems by Usage:',
                 leaf: leaf,
             }]
         });
