@@ -76,7 +76,7 @@ fsChild.on('exit', function(code) {
         if (!quietMode)
             countSpinner.succeed('Summed ' + loaded + ' filesystems to total of ' + pb(totalUsage));
         if (!quietMode)
-            console.log(report);
+            console.log(treeReport);
         if (quietMode)
             console.log(totalUsage);
     });
