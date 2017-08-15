@@ -64,7 +64,7 @@ totals = _.sortBy(totals, 'snapUsage');
 if(!quietMode)
         countSpinner.succeed('Summed ' + loaded + ' filesystems to total of ' + pb(totalUsage));
 if(!quietMode)
-	console.log(totals.slice(totals.length-6,totals.length-1));
+	console.log(report);
 if(quietMode)
 	console.log(totalUsage);
     });
