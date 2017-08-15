@@ -59,8 +59,11 @@ if(!quietMode)
         snapChild.stderr.on('data', function(data) {});
     }, function(errs, totals) {
         if (errs) throw errs;
+totals = _.sortBy(totals, 'snapUsage');
 if(!quietMode)
         countSpinner.succeed('Summed ' + loaded + ' filesystems to total of ' + pb(totalUsage));
+if(!quietMode)
+	console.log(totals.slice(0,5));
 if(quietMode)
 	console.log(totalUsage);
     });
