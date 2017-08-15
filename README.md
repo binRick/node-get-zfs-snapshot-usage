@@ -1,0 +1,2 @@
+![zfsSnapUsage](zfsSnapUsage.gif)
+
