@@ -9,7 +9,7 @@ fs = require('fs'),
     ora = require('ora');
 
 var fileSpinner = ora('Listing ZFS Filesystems...').start();
-var filesystems = child.execSync('zfs list -o name -pHo name').toString().split('\n').filter(function(l) {
+var filesystems = child.execSync('zfs list -o name -s usedbysnapshots -pHo name').toString().split('\n').filter(function(l) {
     return l;
 });
 fileSpinner.succeed('Loaded ' + filesystems.length + ' filesystems..');
@@ -18,7 +18,7 @@ var countSpinner = ora('Summing Snapshot usage..').start();
 var loaded = 0;
 var totalUsage = 0;
 async.mapSeries(filesystems, function(fs, _cb) {
-    countSpinner.text = '  Queries Snapshot usage on ' + loaded + ' filesystems. Total usage: ' + totalUsage;
+    countSpinner.text = '  Queried Snapshot usage on ' + loaded + '/'+filesystems.length+' filesystems. Total usage: ' + totalUsage;
     loaded++;
     var snapUsage = 0;
     var snapChild = child.spawn('zfs', ['get', 'usedbysnapshots', fs, '-pHovalue']);
