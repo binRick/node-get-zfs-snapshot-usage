@@ -1,0 +1,27 @@
+{
+  "name": "node-get-zfs-snapshot-usage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binRick/node-get-zfs-snapshot-usage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binRick/node-get-zfs-snapshot-usage/issues"
+  },
+  "homepage": "https://github.com/binRick/node-get-zfs-snapshot-usage#readme",
+  "dependencies": {
+    "async": "^2.5.0",
+    "chalk": "^2.1.0",
+    "ora": "^1.3.0",
+    "pretty-bytes": "^4.0.2",
+    "prettyjson": "^1.2.1",
+    "underscore": "^1.8.3"
+  }
+}
