@@ -60,6 +60,7 @@ if(!quietMode)
     }, function(errs, totals) {
         if (errs) throw errs;
 totals = _.sortBy(totals, 'snapUsage');
+	var report = totals.slice(totals.length-6,totals.length-1).reverse();
 if(!quietMode)
         countSpinner.succeed('Summed ' + loaded + ' filesystems to total of ' + pb(totalUsage));
 if(!quietMode)
