@@ -62,7 +62,7 @@ fsChild.on('exit', function(code) {
     }, function(errs, totals) {
         if (errs) throw errs;
         totals = _.sortBy(totals, 'snapUsage');
-        var report = totals.slice(totals.length - reportLimit+1, totals.length - 1).reverse();
+        var report = totals.slice(totals.length - (reportLimit+1), totals.length - 1).reverse();
         var leaf = {};
         _.each(report, function(r) {
             leaf[r.fs] = pb(r.snapUsage);
