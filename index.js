@@ -41,7 +41,7 @@ fsChild.on('exit', function(code) {
     var totalUsage = 0;
     async.mapSeries(filesystems, function(fs, _cb) {
         if (!quietMode)
-            countSpinner.text = '  Queried Snapshot usage on ' + loaded + '/' + filesystems.length + ' filesystems. Total usage: ' + totalUsage;
+            countSpinner.text = '  Queried Snapshot usage on ' + loaded + '/' + filesystems.length + ' filesystems. Total usage: ' + pb(totalUsage);
         loaded++;
         var snapUsage = 0;
         var snapChild = child.spawn('zfs', ['get', 'usedbysnapshots', fs, '-pHovalue']);
