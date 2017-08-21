@@ -8,7 +8,7 @@ fs = require('fs'),
     async = require('async'),
     _ = require('underscore'),
     ora = require('ora'),
-reportLimit = 5;
+reportLimit = 15;
 
 if (process.argv[2] == '-q')
     var quietMode = true;
